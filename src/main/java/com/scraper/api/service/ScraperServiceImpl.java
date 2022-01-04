@@ -73,9 +73,9 @@ public class ScraperServiceImpl implements ScraperService{
 			for (Element element : elements) {
 				ResponseDTO responseDTO = new ResponseDTO();
 				
-				var title = element.getElementsByTag("h3").text();
-				var mediaUrl = element.getElementsByTag("a").attr("href");
-				var imgUrl = element.getElementsByTag("img").attr("data-src");
+				String title = element.getElementsByTag("h3").text();
+				String mediaUrl = element.getElementsByTag("a").attr("href");
+				String imgUrl = element.getElementsByTag("img").attr("data-src");
 				
 				System.out.println(imgUrl);
 				
@@ -113,10 +113,10 @@ public class ScraperServiceImpl implements ScraperService{
 			for (Element element : elements) {
 				ResponseDTO responseDTO = new ResponseDTO();
 				
-				var title = element.getElementsByTag("h2").text();
-				var extract = element.getElementsByClass("topleftmain_sumario").text();
-				var mediaUrl = element.getElementsByTag("a").attr("href");
-				var imgUrl = element.getElementsByTag("img").attr("src");
+				String title = element.getElementsByTag("h2").text();
+				String extract = element.getElementsByClass("topleftmain_sumario").text();
+				String mediaUrl = element.getElementsByTag("a").attr("href");
+				String imgUrl = element.getElementsByTag("img").attr("src");
 				
 				responseDTO.setTitle(title);
 				responseDTO.setExtract(extract);
@@ -145,9 +145,9 @@ public class ScraperServiceImpl implements ScraperService{
 			for (Element element : elements) {
 				ResponseDTO responseDTO = new ResponseDTO();
 				
-				var title = element.getElementsByTag("a").attr("title");
-				var mediaUrl = element.getElementsByTag("a").attr("href");
-				var imgUrl = element.getElementsByTag("div").attr("data-src");
+				String title = element.getElementsByTag("a").attr("title");
+				String mediaUrl = element.getElementsByTag("a").attr("href");
+				String imgUrl = element.getElementsByTag("div").attr("data-src");
 				
 				responseDTO.setTitle(title);
 				responseDTO.setExtract(null);
@@ -175,10 +175,10 @@ public class ScraperServiceImpl implements ScraperService{
 			for (Element element : elements) {
 				ResponseDTO responseDTO = new ResponseDTO();
 				
-				var title = element.getElementsByTag("a").text();
-				var extract = element.getElementsByTag("p").text();
-				var mediaUrl = element.getElementsByTag("a").attr("href");
-				var imgUrl = element.getElementsByTag("img").attr("src");
+				String title = element.getElementsByTag("a").text();
+				String extract = element.getElementsByTag("p").text();
+				String mediaUrl = element.getElementsByTag("a").attr("href");
+				String imgUrl = element.getElementsByTag("img").attr("src");
 				
 				if(imgUrl.isEmpty()) {
 					imgUrl = null;
@@ -214,10 +214,10 @@ public class ScraperServiceImpl implements ScraperService{
 			for (Element element : elements) {
 				ResponseDTO responseDTO = new ResponseDTO();
 				
-				var title = element.getElementsByTag("h1").text();
-				var extract = element.getElementsByTag("p").text();
-				var mediaUrl = element.getElementsByTag("a").attr("href");
-				var imgUrl = element.getElementsByTag("img").attr("data-orig-file");
+				String title = element.getElementsByTag("h1").text();
+				String extract = element.getElementsByTag("p").text();
+				String mediaUrl = element.getElementsByTag("a").attr("href");
+				String imgUrl = element.getElementsByTag("img").attr("data-orig-file");
 				
 				if(imgUrl.isEmpty()) {
 					imgUrl = null;
