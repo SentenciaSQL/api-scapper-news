@@ -75,14 +75,16 @@ public class ScraperServiceImpl implements ScraperService{
 				
 				var title = element.getElementsByTag("h3").text();
 				var mediaUrl = element.getElementsByTag("a").attr("href");
-				var imgUrl = element.getElementsByTag("img").attr("src");
+				var imgUrl = element.getElementsByTag("img").attr("data-src");
+				
+				System.out.println(imgUrl);
 				
 				if(title.isEmpty()) {
 					title = element.getElementsByTag("h2").text();
 				} 
 				
 				if(imgUrl.isEmpty()) {
-					imgUrl = "https://www.tbh-location.fr/wp-content/uploads/2019/12/news-e1544436032461.png";
+					imgUrl = null;
 				}
 				
 				responseDTO.setTitle(title);
@@ -179,7 +181,7 @@ public class ScraperServiceImpl implements ScraperService{
 				var imgUrl = element.getElementsByTag("img").attr("src");
 				
 				if(imgUrl.isEmpty()) {
-					imgUrl = "https://www.tbh-location.fr/wp-content/uploads/2019/12/news-e1544436032461.png";
+					imgUrl = null;
 				}
 				
 				if(extract.isEmpty()) {
@@ -218,7 +220,7 @@ public class ScraperServiceImpl implements ScraperService{
 				var imgUrl = element.getElementsByTag("img").attr("data-orig-file");
 				
 				if(imgUrl.isEmpty()) {
-					imgUrl = "https://www.tbh-location.fr/wp-content/uploads/2019/12/news-e1544436032461.png";
+					imgUrl = null;
 				}
 				
 				responseDTO.setTitle(title);
